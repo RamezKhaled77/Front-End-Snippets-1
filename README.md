@@ -32,7 +32,7 @@ A simple and modern **CSS-only animation** that adds a glowing and moving effect
 
 ## 🖼️ Demo Preview
 
-![Border Animation Demo](/assets/Border-Animation.gif)
+![Border Animation Demo](assets/Border-Animation.gif)
 
 ----------
 
