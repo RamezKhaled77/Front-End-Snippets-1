@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(22, 21, 24);
+  color: rgb(224, 223, 223);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+.box {
+  position: relative;
+  background-color: #1c1f2b;
+  padding: 2rem;
+  margin-top: 3rem;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  line-height: 2;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+.box::after,
+.box::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  padding: 3px;
+  animation: spin 3s linear infinite;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  -webkit-animation: spin 3s linear infinite;
+}
+.box::before {
+  filter: blur(1.2rem);
+  opacity: 0.6;
+  -webkit-filter: blur(1.2rem);
+}
+.box1::after,
+.box1::before {
+  background-image: conic-gradient(
+    from var(--angle),
+    red,
+    orange,
+    yellow,
+    lime,
+    aqua,
+    blue,
+    violet,
+    red
+  );
+}
+.box2::after,
+.box2::before {
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 80%,
+    rgb(7, 230, 62)
+  );
+}
+.box3::after,
+.box3::before {
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 60%,
+    #ff00d4,
+    #00fff7
+  );
+}
+.box4::after,
+.box4::before {
+  background-image: conic-gradient(
+    from var(--angle),
+    #fcf259,
+    #ffd65a,
+    #ff9d23,
+    #f93827,
+    #d3263d,
+    #fcf259
+  );
+}
+
+.box h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
+.box p {
+  color: #acaaaa;
+  font-weight: bold;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
